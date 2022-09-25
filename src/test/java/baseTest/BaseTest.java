@@ -13,6 +13,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import pages.CommonActionsWithElements;
 import pages.HomePage;
 import pages.LoginPage;
+import pages.RegistrationPage;
 
 import java.time.Duration;
 
@@ -21,6 +22,7 @@ public class BaseTest {
     Logger logger = Logger.getLogger(getClass());
     protected LoginPage loginPage;
     protected HomePage homePage;
+    protected RegistrationPage registrationPage;
 
     @Before
     public void setUp() {
@@ -32,6 +34,7 @@ public class BaseTest {
         logger.info("Browser was opened");
         loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
+        registrationPage = new RegistrationPage(webDriver);
     }
 
     @After

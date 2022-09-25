@@ -13,6 +13,8 @@ public class LoginPage extends ParentPage {
     private WebElement inputLoginFormPassword;
     @FindBy(xpath = ".//button[@name='login-button']")
     private WebElement buttonLogin;
+    @FindBy(xpath = ".//a[@class='button button_black' and text()='Register']")
+    private WebElement buttonRegister;
 
     public LoginPage(WebDriver webDriver) {
         super(webDriver);
@@ -62,4 +64,8 @@ public class LoginPage extends ParentPage {
         return new HomePage(webDriver);
     }
 
+    public LoginPage clickOnRegisterButton() {
+        clickOnElement(buttonRegister);
+        return new RegistrationPage(webDriver);
+    }
 }
