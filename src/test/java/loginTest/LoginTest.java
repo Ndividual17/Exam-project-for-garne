@@ -5,7 +5,7 @@ import libs.TestData;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LoginTestWithPageObject extends BaseTest {
+public class LoginTest extends BaseTest {
     @Test
     public void validLogin() {
         loginPage

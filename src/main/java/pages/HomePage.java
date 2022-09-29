@@ -17,7 +17,7 @@ public class HomePage extends ParentPage {
     }
 
     public HomePage checkIsRedirectToHomePage() {
-        //TODO checkURL
+        checkUrlWithPattern();
         Assert.assertTrue("HomePage is not loaded", getHeaderElement().isButtonLogoutDisplayed());
         return this;
     }
@@ -35,4 +35,5 @@ public class HomePage extends ParentPage {
     public HeaderElement getHeaderElement() {
         return headerElement;
     }
+
 }
