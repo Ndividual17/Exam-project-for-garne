@@ -4,6 +4,7 @@ import libs.ConfigProperties;
 import org.aeonbits.owner.ConfigFactory;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -71,6 +72,15 @@ public class CommonActionsWithElements {
         } catch (Exception e) {
             logger.info("Element is not displayed");
             return false;
+        }
+    }
+
+    protected void selectTextInProductImageUI(WebElement webElement, String text) {
+        try {
+            webDriver.findElement(By.xpath(".//img[contains(@alt,'" + text + "')]")).click();
+            logger.info("'" + text + "' was selected in productImage");
+        } catch (Exception e) {
+            printErrorAndStopTest(e);
         }
     }
 

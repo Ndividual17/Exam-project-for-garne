@@ -10,10 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-import pages.CommonActionsWithElements;
-import pages.HomePage;
-import pages.LoginPage;
-import pages.RegistrationPage;
+import pages.*;
 
 import java.time.Duration;
 
@@ -23,6 +20,9 @@ public class BaseTest {
     protected LoginPage loginPage;
     protected HomePage homePage;
     protected RegistrationPage registrationPage;
+    protected ProductsForWomenPage productsForWomenPage;
+    protected MainContentIntoProductPage mainContentIntoProductPage;
+    protected CartPage cartPage;
 
     @Before
     public void setUp() {
@@ -35,6 +35,9 @@ public class BaseTest {
         loginPage = new LoginPage(webDriver);
         homePage = new HomePage(webDriver);
         registrationPage = new RegistrationPage(webDriver);
+        productsForWomenPage = new ProductsForWomenPage(webDriver);
+        mainContentIntoProductPage = new MainContentIntoProductPage(webDriver);
+        cartPage = new CartPage(webDriver);
     }
 
     @After
