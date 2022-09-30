@@ -16,6 +16,8 @@ public class MainContentIntoProductPage extends ProductsForWomenPage {
     private WebElement buttonAddToCart;
     @FindBy(xpath = ".//div[@class='alert alert_success']")
     private WebElement alertSuccess;
+    @FindBy(xpath = ".//button[@id='buttonOneClickOrder']")
+    private WebElement buttonBuyInOneClick;
 
     public MainContentIntoProductPage(WebDriver webDriver) {
         super(webDriver);
@@ -62,5 +64,16 @@ public class MainContentIntoProductPage extends ProductsForWomenPage {
 
     public HeaderElement getHeaderElement() {
         return headerElement;
+    }
+
+    public MainContentIntoProductPage checkIsButtonBuyInOneClickActive() {
+        checkUrlWithPattern();
+        Assert.assertTrue("Button Buy in one click is not active", isElementDisplayed(buttonBuyInOneClick));
+        return this;
+    }
+
+    public OrderByOneClickPage clickOnButtonBuyInOneClick() {
+        clickOnElement(buttonBuyInOneClick);
+        return new OrderByOneClickPage(webDriver);
     }
 }

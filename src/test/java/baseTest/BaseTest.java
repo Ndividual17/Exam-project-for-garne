@@ -23,6 +23,8 @@ public class BaseTest {
     protected ProductsForWomenPage productsForWomenPage;
     protected MainContentIntoProductPage mainContentIntoProductPage;
     protected CartPage cartPage;
+    protected GiftCertificatesPage giftCertificatesPage;
+    protected OrderByOneClickPage orderByOneClickPage;
 
     @Before
     public void setUp() {
@@ -38,6 +40,8 @@ public class BaseTest {
         productsForWomenPage = new ProductsForWomenPage(webDriver);
         mainContentIntoProductPage = new MainContentIntoProductPage(webDriver);
         cartPage = new CartPage(webDriver);
+        giftCertificatesPage = new GiftCertificatesPage(webDriver);
+        orderByOneClickPage = new OrderByOneClickPage(webDriver);
     }
 
     @After

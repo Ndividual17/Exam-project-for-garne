@@ -2,10 +2,14 @@ package pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import pages.elements.HeaderElement;
 
 public class HomePage extends ParentPage {
     private HeaderElement headerElement = new HeaderElement(webDriver);
+    @FindBy(xpath = ".//span[@class='certificate__link button']")
+    private WebElement buttonOrderCertificate;
 
     public HomePage(WebDriver webDriver) {
         super(webDriver);
@@ -36,4 +40,13 @@ public class HomePage extends ParentPage {
         return headerElement;
     }
 
+    public HomePage checkIsButtonOrderCertificateDisplayed() {
+        Assert.assertTrue("The button Order Certificate is not displayed", isElementDisplayed(buttonOrderCertificate));
+        return this;
+    }
+
+    public HomePage clickOnButtonOrderCertificate() {
+        clickOnElement(buttonOrderCertificate);
+        return new GiftCertificatesPage(webDriver);
+    }
 }
