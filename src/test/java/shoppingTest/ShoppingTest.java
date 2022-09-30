@@ -4,8 +4,8 @@ import baseTest.BaseTest;
 import org.junit.Test;
 
 public class ShoppingTest extends BaseTest {
-    final String NUMBER_PRODUCT = "8048753";
-    final String NUMBER_PRODUCT1 = "4026905";
+    final String NUMBER_PRODUCT = "3039281";
+    final String NUMBER_PRODUCT1 = "3039007";
 
     @Test
     public void TC1_addClothesToCart() {
