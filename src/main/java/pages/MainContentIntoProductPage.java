@@ -10,8 +10,8 @@ public class MainContentIntoProductPage extends ProductsForWomenPage {
     private final HeaderElement headerElement = new HeaderElement(webDriver);
     @FindBy(xpath = ".//h3[@class='comments__title' and text()='Product reviews']")
     private WebElement titleProductReviews;
-    @FindBy(xpath = ".//button[@data-product-size='s/m']")
-    private WebElement buttonProductSizeSM;
+    @FindBy(xpath = ".//button[@data-product-size='s']")
+    private WebElement buttonProductSizeS;
     @FindBy(xpath = ".//button[@value='add_to_cart']")
     private WebElement buttonAddToCart;
     @FindBy(xpath = ".//div[@class='alert alert_success']")
@@ -34,15 +34,15 @@ public class MainContentIntoProductPage extends ProductsForWomenPage {
         return this;
     }
 
-    public MainContentIntoProductPage checkIsButtonProductSizeSMDisplayed() {
+    public MainContentIntoProductPage checkIsButtonProductSizeSDisplayed() {
         checkUrlWithPattern();
-        Assert.assertTrue("Product doesn't have size s/m", isElementDisplayed(buttonProductSizeSM));
+        Assert.assertTrue("Product doesn't have size s", isElementDisplayed(buttonProductSizeS));
         return this;
     }
 
-    public MainContentIntoProductPage clickOnButtonProductSizeSM() {
+    public MainContentIntoProductPage clickOnButtonProductSizeS() {
         checkUrlWithPattern();
-        clickOnElement(buttonProductSizeSM);
+        clickOnElement(buttonProductSizeS);
         return this;
     }
 

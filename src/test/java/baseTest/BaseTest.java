@@ -25,6 +25,7 @@ public class BaseTest {
     protected CartPage cartPage;
     protected GiftCertificatesPage giftCertificatesPage;
     protected OrderByOneClickPage orderByOneClickPage;
+    protected MyCabinetPage myCabinetPage;
 
     @Before
     public void setUp() {
@@ -42,6 +43,7 @@ public class BaseTest {
         cartPage = new CartPage(webDriver);
         giftCertificatesPage = new GiftCertificatesPage(webDriver);
         orderByOneClickPage = new OrderByOneClickPage(webDriver);
+        myCabinetPage = new MyCabinetPage(webDriver);
     }
 
     @After

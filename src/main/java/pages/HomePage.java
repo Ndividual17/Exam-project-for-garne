@@ -17,7 +17,7 @@ public class HomePage extends ParentPage {
 
     @Override
     String getRelativeUrl() {
-        return "/";
+        return "";
     }
 
     public HomePage checkIsRedirectToHomePage() {
