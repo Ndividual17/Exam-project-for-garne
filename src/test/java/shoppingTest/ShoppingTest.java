@@ -4,22 +4,22 @@ import baseTest.BaseTest;
 import org.junit.Test;
 
 public class ShoppingTest extends BaseTest {
-    final String NUMBER_PRODUCT = "3039281";
-    final String NUMBER_PRODUCT1 = "3039007";
+    final String NUMBER_PRODUCT = "3039229"; // Перед тестом необхідно перевірити NUMBER_PRODUCT на сайті, тому що часто асортимент змінюється
 
     @Test
-    public void TC1_addClothesToCart() {
+    public void addClothesToCart() {
         homePage
                 .openHomePage()
-                .getHeaderElement().clickOnButtonWomen();
+                .checkIsRedirectToHomePage()
+                .getHeaderElement().clickOnWomenButton();
         productsForWomenPage
                 .checkIsRedirectToProductsForWomenPage()
-//                .selectProductImageUI("Panties");
+                .clickOnCategoryDresses()
                 .selectProductImageUI(NUMBER_PRODUCT);
         mainContentIntoProductPage
                 .checkIsRedirectToMainContentPage()
-                .checkIsButtonProductSizeSMDisplayed()
-                .clickOnButtonProductSizeSM()
+                .checkIsButtonProductSizeSDisplayed()
+                .clickOnButtonProductSizeS()
                 .checkIsButtonAddToCartActive()
                 .clickOnButtonAddToCart()
                 .checkTextInAlert("Product successfully added to basket")
@@ -27,7 +27,6 @@ public class ShoppingTest extends BaseTest {
         cartPage
                 .checkIsRedirectToCartPage()
                 .checkNumberOfProductWasAddedToCart(NUMBER_PRODUCT)
-//                .checkNumberOfProductWasAddedToCart("8048752")
         ;
     }
 

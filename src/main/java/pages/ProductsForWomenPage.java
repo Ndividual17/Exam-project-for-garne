@@ -10,6 +10,8 @@ public class ProductsForWomenPage extends ParentPage {
     private WebElement headerTitle;
     @FindBy(xpath = ".//a[@class='product__image']")
     private WebElement productImage;
+    @FindBy(xpath = ".//ul[@id='category-list']//a[text()='Dresses']")
+    private WebElement menuDressesCategory;
 
     public ProductsForWomenPage(WebDriver webDriver) {
         super(webDriver);
@@ -31,4 +33,8 @@ public class ProductsForWomenPage extends ParentPage {
         return new MainContentIntoProductPage(webDriver);
     }
 
+    public ProductsForWomenPage clickOnCategoryDresses() {
+        clickOnElement(menuDressesCategory);
+        return this;
+    }
 }

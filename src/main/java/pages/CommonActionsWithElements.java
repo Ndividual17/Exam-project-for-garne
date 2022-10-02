@@ -75,6 +75,16 @@ public class CommonActionsWithElements {
         }
     }
 
+    protected boolean isElementContainsText(WebElement webElement, String text) {
+        try {
+            String webElementText = webElement.getText();
+            return webElementText.equals(text);
+        } catch (Exception e) {
+            logger.error(e);
+            return false;
+        }
+    }
+
     protected void selectTextInProductImageUI(WebElement webElement, String text) {
         try {
             webDriver.findElement(By.xpath(".//img[contains(@alt,'" + text + "')]")).click();

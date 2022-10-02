@@ -5,9 +5,10 @@ import org.junit.Test;
 
 public class OrderCertificateTest extends BaseTest {
     @Test
-    public void TC1_orderCertificateByOneClick() {
+    public void orderCertificateByOneClick() {
         homePage
                 .openHomePage()
+                .checkIsRedirectToHomePage()
                 .checkIsButtonOrderCertificateDisplayed()
                 .clickOnButtonOrderCertificate();
         giftCertificatesPage
