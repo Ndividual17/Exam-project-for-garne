@@ -26,7 +26,10 @@ public class ShoppingTest extends BaseTest {
                 .getHeaderElement().clickOnCartButton();
         cartPage
                 .checkIsRedirectToCartPage()
-                .checkNumberOfProductWasAddedToCart(NUMBER_PRODUCT)
+                .checkNumberOfProductWasAddedToCart(NUMBER_PRODUCT);
+        cartPage
+                .clickOnButtonDeleteProduct()
+                .clickOnSubmitButtonInAlert()
         ;
     }
 

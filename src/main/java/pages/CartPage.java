@@ -10,6 +10,8 @@ public class CartPage extends ParentPage {
     private WebElement title;
     @FindBy(xpath = ".//a[contains(text(),'Код')]/strong")
     private WebElement itemNumberOfProduct;
+    @FindBy(xpath = ".//button[@title='Delete']")
+    private WebElement deleteCartProduct;
 
     public CartPage(WebDriver webDriver) {
         super(webDriver);
@@ -30,5 +32,14 @@ public class CartPage extends ParentPage {
         checkUrlWithPattern();
         Assert.assertEquals(itemNumber, itemNumberOfProduct.getText());
         logger.info("Item number of product in shopping cart is: " + itemNumberOfProduct.getText());
+    }
+
+    public CartPage clickOnButtonDeleteProduct(){
+        clickOnElement(deleteCartProduct);
+        return this;
+    }
+
+    public void clickOnSubmitButtonInAlert() {
+        webDriver.switchTo().alert().accept();
     }
 }
